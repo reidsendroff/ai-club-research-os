@@ -1,0 +1,779 @@
+{
+  "competition": {
+    "name": "USAAIO Round 2",
+    "location": "MIT",
+    "date": "2026-04-04",
+    "startDate": "2026-03-07",
+    "totalDays": 28,
+    "totalHours": "85-95",
+    "goal": "Gold Medal",
+    "round1Score": 107,
+    "round1Result": "Honor Roll"
+  },
+  "scoreConversionMap": [
+    { "topic": "Transformer derivation (attention, gradients) → theory points", "probability": "HIGH" },
+    { "topic": "Encoder block from memory → implementation points", "probability": "HIGH" },
+    { "topic": "VAE from memory + ELBO derivation → theory + implementation", "probability": "HIGH" },
+    { "topic": "GAN objective, mode collapse, WGAN → short-answer", "probability": "HIGH" },
+    { "topic": "Full-task pipeline in 75 min on GPU → pipeline points", "probability": "HIGH" },
+    { "topic": "Kernel proof + PAC bound derivation → proof points", "probability": "MEDIUM-HIGH" },
+    { "topic": "SVM dual + KKT (why α_i > 0 for support vectors) → theory", "probability": "MEDIUM-HIGH" },
+    { "topic": "Softmax + CE gradient, backprop through affine layer", "probability": "MEDIUM-HIGH" },
+    { "topic": "Diffusion forward/reverse + UNet skeleton → conceptual + code", "probability": "MEDIUM" },
+    { "topic": "CLIP / InfoNCE + SD text conditioning → differentiation points", "probability": "MEDIUM" },
+    { "topic": "Reasoning sections: justify loss, init, optimizer choice", "probability": "MEDIUM" },
+    { "topic": "FlashAttention, LoRA, ViT, TransformerLens", "probability": "LOW" },
+    { "topic": "Papers With Code browsing, ecosystem knowledge", "probability": "DO NOT TOUCH" }
+  ],
+  "resourceTimeCap": [
+    { "duration": "≤ 25 min", "rule": "Primary paper or note — read the section needed, then close it" },
+    { "duration": "≤ 20 min", "rule": "One implementation reference — study the key lines, then close it" },
+    { "duration": "≥ 30 min", "rule": "Rebuild from memory — this is the minimum, not the maximum" },
+    { "duration": "0 extra", "rule": "Third resource unlocked only if mistake log proves first two failed" }
+  ],
+  "redFlagList": [
+    "Reading instead of rebuilding. If you spent more time reading than producing from memory today, that session was low-ROI.",
+    "Polishing GAN or UNet code. Aim for literacy, not craft. A working skeleton earns full credit.",
+    "Chasing architecture breadth. Every hour on ViT / LoRA / Score SDEs is an hour not spent on a 3rd attention-from-memory repetition.",
+    "Under-practicing reasoning sections. The 2026 format awards Markdown reasoning. If you have not written 3+ reasoning cells this week, you are behind.",
+    "Not timing derivations. \"I know this\" ≠ \"I can produce this cold in 8 minutes.\" Timed production is the only test that matters.",
+    "Conflating understanding with production. You can explain attention perfectly and still fail to implement it under pressure. Rebuild counts; recall alone does not."
+  ],
+  "syllabusBlindSpots": [
+    {
+      "id": 1,
+      "title": "Kernel Validity: Mercer Closure Proofs",
+      "pillar": "C",
+      "formula": "Mercer's Condition: K is valid iff for all z: z^T K z >= 0 (K is PSD)",
+      "keyPoints": [
+        "Sum: K1 and K2 valid => K = K1 + K2 is valid",
+        "Product: K1 and K2 valid => K = K1 * K2 is valid",
+        "Exponential: K valid => K' = exp(K(x,x')) is valid",
+        "RBF = exp(-||x-x'||^2 / 2sigma^2) is valid and why"
+      ],
+      "addedTo": "Thu Mar 26"
+    },
+    {
+      "id": 2,
+      "title": "PAC Learning & Generalization Bounds",
+      "pillar": "C",
+      "formula": "P(R(f_n) >= eps) <= |H| * e^(-n*eps)",
+      "keyPoints": [
+        "Derivation chain: Hoeffding -> Union Bound -> PAC Bound",
+        "Practice: given n=1000, |H|=100, what confidence on error <= 0.1?",
+        "Understand what n, |H|, and eps each control"
+      ],
+      "addedTo": "Wed Mar 25"
+    },
+    {
+      "id": 3,
+      "title": "CLIP / InfoNCE Contrastive Loss",
+      "pillar": "B",
+      "formula": "InfoNCE: L = -(1/N) sum log [exp(sim(zi,ti)/tau) / sum_j exp(sim(zi,tj)/tau)]",
+      "keyPoints": [
+        "CLIP: image encoder (ViT) + text encoder (Transformer) -> shared latent space",
+        "InfoNCE: maximize similarity of N correct pairs, minimize N^2-N incorrect",
+        "Temperature tau controls how peaked the distribution is",
+        "Cross-entropy over similarity scores, not reconstruction loss"
+      ],
+      "addedTo": "Sun Mar 15"
+    },
+    {
+      "id": 4,
+      "title": "Stable Diffusion: VAE Decoder + Text Conditioning",
+      "pillar": "B",
+      "formula": "CLIP text encoder -> UNet (cross-attention on text embeddings) -> VAE decoder -> pixel output",
+      "keyPoints": [
+        "VAE Decoder: diffusion in latent space, VAE decoder maps denoised latent back to pixels",
+        "Text conditioning: CLIP embeddings injected via cross-attention in UNet residual blocks",
+        "Noisy latent is Q; text embeddings are K and V"
+      ],
+      "addedTo": "Wed Mar 18"
+    },
+    {
+      "id": 5,
+      "title": "Reasoning Section Drill (2026 Format Change)",
+      "pillar": "D",
+      "formula": "10-Minute Reasoning Section Protocol after every implementation",
+      "keyPoints": [
+        "Why this loss function? (BCE vs MSE for VAE)",
+        "Why this weight initialization? (Xavier vs Kaiming)",
+        "Why this optimizer / learning rate?",
+        "What would break if you changed X?"
+      ],
+      "addedTo": "All Phase 4 coding drills"
+    }
+  ],
+  "scorePillars": [
+    {
+      "id": "A",
+      "name": "Transformer Mastery",
+      "items": [
+        "Derive scaled dot-product attention cleanly",
+        "Explain multi-head attention, positional encoding, residuals, layer norm",
+        "Implement a transformer encoder block from memory",
+        "Understand masking and decoder structure conceptually",
+        "Know Flash Attention conceptually: IO-aware recomputation"
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Generative AI Mastery",
+      "items": [
+        "Autoencoder vs VAE vs GAN vs diffusion: purpose and differences",
+        "Derive ELBO at competition level",
+        "Implement a minimal VAE from memory",
+        "Explain GAN objective and mode collapse",
+        "Explain DDPM/stable diffusion conceptually; implement UNet",
+        "CLIP: InfoNCE loss, dual-encoder architecture, temperature tau",
+        "SD pipeline: CLIP encoder -> UNet (cross-attention) -> VAE decoder"
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Math / Derivation Fluency",
+      "items": [
+        "Softmax + cross-entropy gradient",
+        "Backprop through linear layers, activation, normalization",
+        "Vector projections, norms, orthogonality, matrix shape discipline",
+        "SVM dual and kernel validity at proof level",
+        "Mercer closure proofs: sum, product, exp of valid kernels",
+        "PAC learning bound: P(R(f_n) >= eps) <= |H| * e^(-n*eps)",
+        "Hoeffding / concentration style applications"
+      ]
+    },
+    {
+      "id": "D",
+      "name": "Competition Execution",
+      "items": [
+        "Solve under time pressure",
+        "Write clear markdown/LaTeX explanations",
+        "Reasoning sections: explain why behind every architecture and loss choice",
+        "Complete full-task pipelines on GPU",
+        "Avoid shape mistakes, algebra slips, vague reasoning"
+      ]
+    }
+  ],
+  "dailyNonNegotiables": [
+    { "duration": "10 min", "task": "PyTorch / NumPy / linear algebra flash review (no docs)" },
+    { "duration": "20 min", "task": "One handwritten derivation or proof fragment" },
+    { "duration": "Main", "task": "One deep topic only" },
+    { "duration": "5 min", "task": "Log mistakes with a fix action in the taxonomy (category + what you will do tonight to fix it)" }
+  ],
+  "phases": [
+    {
+      "id": 1,
+      "name": "Transformers + Linear Algebra",
+      "dateRange": "March 7-13",
+      "pillar": "A",
+      "days": [
+        {
+          "date": "2026-03-07",
+          "dayLabel": "Sat March 7",
+          "type": "weekend",
+          "hours": "3-4 hrs",
+          "title": "Scaled dot-product attention from first principles",
+          "tasks": [
+            "Read \"Attention Is All You Need\" section 3 (architecture only)",
+            "Derive softmax(QK^T / sqrt(d_k))V on paper - track all shapes, understand why sqrt(d_k) scaling prevents softmax saturation",
+            "Implement single-head attention in NumPy from scratch, timed",
+            "Verify: multiply random Q, K, V matrices, check shapes manually"
+          ],
+          "resources": [
+            { "name": "Attention Is All You Need", "url": "https://arxiv.org/abs/1706.03762", "note": "section 3 only" },
+            { "name": "The Illustrated Transformer", "url": "https://jalammar.github.io/illustrated-transformer/", "note": "use when paper feels too abstract" },
+            { "name": "MatrixCalculus.org", "url": "https://www.matrixcalculus.org/", "note": "verify gradients after" }
+          ]
+        },
+        {
+          "date": "2026-03-08",
+          "dayLabel": "Sun March 8",
+          "type": "weekend",
+          "hours": "3-4 hrs",
+          "title": "Multi-head attention + positional encoding",
+          "tasks": [
+            "Implement multi-head attention: split -> parallel heads -> concat -> linear projection",
+            "Write shape table from memory: (batch, heads, seq_len, d_k)",
+            "Derive sinusoidal positional encoding formula; implement from scratch",
+            "Review residual connection + layer norm purpose",
+            "All in PyTorch on GPU"
+          ],
+          "resources": [
+            { "name": "The Annotated Transformer (Harvard)", "url": "https://nlp.seas.harvard.edu/2018/04/03/attention.html", "note": "best line-by-line PyTorch" },
+            { "name": "LabML Annotated Transformer", "url": "https://labml.ai/annotated_pytorch/paper/implementations/transformer", "note": "positional encodings + masking" },
+            { "name": "Karpathy: Let's Build GPT", "url": "https://www.youtube.com/watch?v=kCc8FmEb1nY", "note": "best visceral cement for attention" }
+          ]
+        },
+        {
+          "date": "2026-03-09",
+          "dayLabel": "Mon March 9",
+          "type": "school",
+          "hours": "1.5 hrs",
+          "title": "Full encoder block in PyTorch",
+          "tasks": [
+            "Implement from memory: multi-head attention -> residual + LayerNorm -> FFN -> residual + LayerNorm",
+            "Understand pre-norm vs post-norm - know which the original paper uses and why pre-norm is now preferred",
+            "Verify forward pass shape correctness on GPU"
+          ],
+          "resources": [
+            { "name": "nanoGPT model.py (Karpathy)", "url": "https://github.com/karpathy/nanoGPT", "note": "~300 lines, read in full" },
+            { "name": "PyTorch Transformer Building Blocks", "url": "https://docs.pytorch.org/tutorials/intermediate/transformer_building_blocks.html", "note": "modern official reference" }
+          ]
+        },
+        {
+          "date": "2026-03-10",
+          "dayLabel": "Tue March 10",
+          "type": "school",
+          "hours": "1.5 hrs",
+          "title": "Masking + decoder concepts",
+          "tasks": [
+            "Implement causal mask (upper triangular) for autoregressive decoding",
+            "Understand encoder self-attention vs masked self-attention vs cross-attention",
+            "Understand why cross-attention uses encoder output for K, V",
+            "Small coding drill for mask creation only"
+          ],
+          "resources": [
+            { "name": "Attention Is All You Need", "url": "https://arxiv.org/abs/1706.03762", "note": "decoder section" },
+            { "name": "TransformerLens", "url": "https://github.com/neelnanda-io/TransformerLens", "note": "visualize attention patterns" }
+          ]
+        },
+        {
+          "date": "2026-03-11",
+          "dayLabel": "Wed March 11",
+          "type": "school",
+          "hours": "1.5 hrs",
+          "title": "Attention gradients on paper",
+          "tasks": [
+            "Derive dL/dQ, dL/dK, dL/dV for scaled dot-product attention by hand",
+            "Focus on correctness, not elegance",
+            "Write up in LaTeX in Colab markdown cell, timed (practice competition format)"
+          ],
+          "resources": [
+            { "name": "CS231n Backprop Notes", "url": "https://cs231n.github.io/optimization-2/", "note": "chain rule, staged computation" },
+            { "name": "Roger Grosse: Backpropagation Notes", "url": "https://www.cs.toronto.edu/~rgrosse/courses/csc421_2019/readings/L04%20Backpropagation.pdf", "note": "Jacobians, vector chain rule" },
+            { "name": "MatrixCalculus.org", "url": "https://www.matrixcalculus.org/", "note": "verify after, not before" },
+            { "name": "KaTeX Reference", "url": "https://katex.org/docs/supported.html", "note": "fastest LaTeX symbol lookup" }
+          ]
+        },
+        {
+          "date": "2026-03-12",
+          "dayLabel": "Thu March 12",
+          "type": "school",
+          "hours": "1.5 hrs",
+          "title": "Linear algebra repair day",
+          "tasks": [
+            "Norms, projections, orthogonality, unit vectors",
+            "Matrix multiplication shape checks",
+            "Fix residual mistakes from older work",
+            "Connect back to attention: attention weights are projections in embedding space"
+          ],
+          "resources": [
+            { "name": "3Blue1Brown Linear Algebra", "url": "https://www.3blue1brown.com/topics/linear-algebra", "note": "fast intuition repair" },
+            { "name": "MIT 18.06 Strang (OCW)", "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/video_galleries/video-lectures/", "note": "Lectures 14-20: projections, least squares" },
+            { "name": "The Matrix Cookbook", "url": "https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf", "note": "navigate fast; don't memorize" }
+          ]
+        },
+        {
+          "date": "2026-03-13",
+          "dayLabel": "Fri March 13",
+          "type": "school",
+          "hours": "1.5 hrs",
+          "title": "Timed transformer drill [REP 1 — attention from memory]",
+          "tasks": [
+            "45-min no-doc implementation: attention + MHA + residual + LN + FFN",
+            "30-min written explanation of each component",
+            "If you can't finish: identify exactly what tripped you up and redo"
+          ],
+          "resources": [
+            { "name": "nanoGPT model.py", "url": "https://github.com/karpathy/nanoGPT", "note": "benchmark your implementation (check after)" },
+            { "name": "Karpathy: micrograd", "url": "https://www.youtube.com/watch?v=VMj-3S1tku0", "note": "if backprop felt shaky" },
+            { "name": "FlashAttention Paper", "url": "https://arxiv.org/abs/2205.14135", "note": "IO-aware recomputation trick" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Generative Models",
+      "dateRange": "March 14-20",
+      "pillar": "B",
+      "days": [
+        {
+          "date": "2026-03-14",
+          "dayLabel": "Sat March 14",
+          "type": "weekend",
+          "hours": "3-4 hrs",
+          "title": "Autoencoder + VAE",
+          "tasks": [
+            "Build vanilla autoencoder on MNIST: encoder -> bottleneck -> decoder (MSE or BCE)",
+            "Extend to VAE: encoder outputs mu and log-variance",
+            "Understand reparameterization trick: z = mu + sigma * epsilon (gradient can't flow through sampling)",
+            "All on GPU"
+          ],
+          "resources": [
+            { "name": "Auto-Encoding Variational Bayes (Kingma & Welling)", "url": "https://arxiv.org/abs/1312.6114", "note": "primary source" },
+            { "name": "Lilian Weng: From Autoencoder to Beta-VAE", "url": "https://lilianweng.github.io/posts/2018-08-12-vae/", "note": "clearest ELBO derivation" },
+            { "name": "PyTorch VAE Example", "url": "https://github.com/pytorch/examples/tree/main/vae", "note": "study before timed rebuild" }
+          ]
+        },
+        {
+          "date": "2026-03-15",
+          "dayLabel": "Sun March 15",
+          "type": "weekend",
+          "hours": "3-4 hrs",
+          "title": "ELBO derivation + VAE from memory + CLIP intro",
+          "tasks": [
+            "Morning: Derive log p(x) >= E_q[log p(x|z)] - KL(q(z|x) || p(z)) on paper",
+            "Understand each term: reconstruction loss + KL regularization",
+            "Write one full clean derivation in markdown/LaTeX",
+            "Afternoon: 30-45 min timed VAE from memory",
+            "CLIP (30 min): Read CLIP paper Section 2 — dual-encoder, InfoNCE loss, temperature tau"
+          ],
+          "resources": [
+            { "name": "Lilian Weng: From Autoencoder to Beta-VAE", "url": "https://lilianweng.github.io/posts/2018-08-12-vae/", "note": "ELBO deep dive" },
+            { "name": "CLIP Paper — Section 2 only", "url": "https://arxiv.org/abs/2103.00020", "note": "3 pages maximum" },
+            { "name": "PyTorch VAE Example", "url": "https://github.com/pytorch/examples/tree/main/vae", "note": "" }
+          ]
+        },
+        {
+          "date": "2026-03-16",
+          "dayLabel": "Mon March 16",
+          "type": "school",
+          "hours": "1.5 hrs",
+          "title": "GAN fundamentals",
+          "tasks": [
+            "Implement simple GAN on MNIST: generator + discriminator",
+            "Minimax objective: min_G max_D E[log D(x)] + E[log(1 - D(G(z)))]",
+            "Understand mode collapse - why it happens",
+            "Know conceptually: Wasserstein distance and WGAN stability"
+          ],
+          "resources": [
+            { "name": "Generative Adversarial Nets (Goodfellow)", "url": "https://arxiv.org/abs/1406.2661", "note": "primary source" },
+            { "name": "Lilian Weng: From GAN to WGAN", "url": "https://lilianweng.github.io/posts/2017-08-20-gan/", "note": "exactly competition depth" },
+            { "name": "PyTorch DCGAN Tutorial", "url": "https://docs.pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html", "note": "instability exposure" },
+            { "name": "GAN Hacks (Soumith)", "url": "https://github.com/soumith/ganhacks", "note": "training stability fixes" }
+          ]
+        },
+        {
+          "date": "2026-03-17",
+          "dayLabel": "Tue March 17",
+          "type": "school",
+          "hours": "1.5 hrs",
+          "title": "GAN implementation practice",
+          "tasks": [
+            "Minimal MNIST GAN or pseudo-code level",
+            "Explain training alternation (train D, freeze G; then train G, freeze D)",
+            "Experience instability firsthand"
+          ],
+          "resources": [
+            { "name": "PyTorch-GAN repo (eriklindernoren)", "url": "https://github.com/eriklindernoren/PyTorch-GAN", "note": "clean minimal variants" },
+            { "name": "GAN Hacks", "url": "https://github.com/soumith/ganhacks", "note": "" },
+            { "name": "Gradient Clipping", "url": "https://pytorch.org/docs/stable/generated/torch.nn.utils.clip_grad_norm_.html", "note": "training stability" }
+          ]
+        },
+        {
+          "date": "2026-03-18",
+          "dayLabel": "Wed March 18",
+          "type": "school",
+          "hours": "1.5 hrs",
+          "title": "Diffusion models - conceptual + SD architecture",
+          "tasks": [
+            "Forward noising process: x_t = sqrt(alpha_bar_t) * x_0 + sqrt(1-alpha_bar_t) * epsilon",
+            "Reverse denoising: learn to predict noise epsilon given x_t and t",
+            "Noise prediction loss: ||epsilon - epsilon_theta(x_t, t)||^2",
+            "UNet role as the denoising network",
+            "Full SD pipeline: CLIP text encoder -> UNet (cross-attention) -> VAE decoder -> pixels",
+            "Text conditioning: noisy latent is Q, CLIP text embeddings are K and V"
+          ],
+          "resources": [
+            { "name": "DDPM Paper (Ho et al.)", "url": "https://arxiv.org/abs/2006.11239", "note": "primary source" },
+            { "name": "LDM Paper — Figure 3 + section 3.3", "url": "https://arxiv.org/abs/2112.10752", "note": "SD pipeline + text conditioning" },
+            { "name": "Lilian Weng: What are Diffusion Models?", "url": "https://lilianweng.github.io/posts/2021-07-11-diffusion-models/", "note": "VAE/GAN -> diffusion bridge" },
+            { "name": "CMU 11-785 Diffusion Slides", "url": "https://deeplearning.cs.cmu.edu/F23/document/slides/lec18.diffusion.pdf", "note": "cleanest DDPM walkthrough" }
+          ]
+        },
+        {
+          "date": "2026-03-19",
+          "dayLabel": "Thu March 19",
+          "type": "school",
+          "hours": "1.5 hrs",
+          "title": "UNet skeleton + skip-connection shape verification",
+          "tasks": [
+            "Implement UNet skeleton only: encoder (conv + downsample) -> bottleneck -> decoder (upsample + skip concat)",
+            "Goal: verify skip-connection shapes match and forward pass runs on GPU — not a polished implementation",
+            "Stop when it works at a basic level. Log any shape errors immediately.",
+            "UNet is on the syllabus as backbone of diffusion models — literacy is enough, craft is not"
+          ],
+          "resources": [
+            { "name": "OpenAI Improved Diffusion (UNet arch)", "url": "https://github.com/openai/improved-diffusion", "note": "adapt for MNIST scale" },
+            { "name": "HF Diffusers: Basic Training", "url": "https://huggingface.co/docs/diffusers/en/tutorials/basic_training", "note": "UNet + schedulers" },
+            { "name": "PyTorch Tensor View Semantics", "url": "https://pytorch.org/docs/stable/tensor_view.html", "note": "#1 source of shape bugs" }
+          ]
+        },
+        {
+          "date": "2026-03-20",
+          "dayLabel": "Fri March 20",
+          "type": "school",
+          "hours": "1.5 hrs",
+          "title": "Timed generative review",
+          "tasks": [
+            "25-min VAE rebuild from memory (no docs)",
+            "20-min written compare/contrast: AE vs VAE, VAE vs GAN, GAN vs diffusion",
+            "15-min GAN objective + instability explanation in LaTeX"
+          ],
+          "resources": [
+            { "name": "Lilian Weng: From Autoencoder to Beta-VAE", "url": "https://lilianweng.github.io/posts/2018-08-12-vae/", "note": "" },
+            { "name": "Lilian Weng: From GAN to WGAN", "url": "https://lilianweng.github.io/posts/2017-08-20-gan/", "note": "" },
+            { "name": "KaTeX Reference", "url": "https://katex.org/docs/supported.html", "note": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Classical ML + Proofs",
+      "dateRange": "March 21-27",
+      "pillar": "C",
+      "days": [
+        {
+          "date": "2026-03-21",
+          "dayLabel": "Sat March 21",
+          "type": "weekend",
+          "hours": "3-4 hrs",
+          "title": "SVM fundamentals + implementation",
+          "tasks": [
+            "Max-margin classifier: find hyperplane that maximizes distance to nearest points",
+            "Hinge loss: max(0, 1 - y * f(x))",
+            "Support vectors and soft-margin SVM with C parameter",
+            "Implement soft-margin SVM from scratch in NumPy/PyTorch"
+          ],
+          "resources": [
+            { "name": "CS229 SVM Notes", "url": "https://cs229.stanford.edu/notes2021fall/cs229-notes3.pdf", "note": "primary source" },
+            { "name": "CS229 Full Lecture Notes (2022)", "url": "https://cs229.stanford.edu/lectures-spring2022/main_notes.pdf", "note": "single PDF for all classical ML" }
+          ]
+        },
+        {
+          "date": "2026-03-22",
+          "dayLabel": "Sun March 22",
+          "type": "weekend",
+          "hours": "3-4 hrs",
+          "title": "SVM dual + Lagrangian + KKT depth",
+          "tasks": [
+            "Derive the dual formulation via Lagrange multipliers",
+            "Understand why the dual is useful: kernel trick only works in dual form",
+            "KKT depth: Know why alpha_i > 0 only for support vectors (complementary slackness)",
+            "Focus on deriving structure, not memorizing symbols"
+          ],
+          "resources": [
+            { "name": "CS229 SVM Notes — KKT section", "url": "https://cs229.stanford.edu/notes2021fall/cs229-notes3.pdf", "note": "" },
+            { "name": "CS229 Full Lecture Notes", "url": "https://cs229.stanford.edu/lectures-spring2022/main_notes.pdf", "note": "" },
+            { "name": "MatrixCalculus.org", "url": "https://www.matrixcalculus.org/", "note": "" }
+          ]
+        },
+        {
+          "date": "2026-03-23",
+          "dayLabel": "Mon March 23",
+          "type": "school",
+          "hours": "1.5 hrs",
+          "title": "Kernel trick + kernel validity proofs (Mercer's condition)",
+          "tasks": [
+            "Kernel trick: K(x, y) = phi(x) . phi(y) without computing phi",
+            "Common kernels: linear, polynomial, RBF",
+            "Prove kernel validity: Gram matrix is PSD (z^T K z >= 0 for all z)",
+            "Three closure proofs from memory: sum, product, exp of valid kernels",
+            "Know RBF = exp(-||x-x'||^2 / 2sigma^2) is valid and why"
+          ],
+          "resources": [
+            { "name": "CS229 Kernel Methods Notes", "url": "https://cs229.stanford.edu/notes2021fall/cs229-notes3.pdf", "note": "" }
+          ]
+        },
+        {
+          "date": "2026-03-24",
+          "dayLabel": "Tue March 24",
+          "type": "school",
+          "hours": "1.5 hrs",
+          "title": "Backprop and matrix calculus",
+          "tasks": [
+            "Derive gradient of softmax + cross-entropy combined",
+            "MSE vectorized gradient",
+            "Basic chain rule through affine layer",
+            "Optional: batch norm gradient if core gradients are solid"
+          ],
+          "resources": [
+            { "name": "CS231n Backprop Notes", "url": "https://cs231n.github.io/optimization-2/", "note": "" },
+            { "name": "Roger Grosse: Backpropagation Notes", "url": "https://www.cs.toronto.edu/~rgrosse/courses/csc421_2019/readings/L04%20Backpropagation.pdf", "note": "" },
+            { "name": "Karpathy: micrograd", "url": "https://www.youtube.com/watch?v=VMj-3S1tku0", "note": "if anything feels shaky" },
+            { "name": "Goodfellow Deep Learning — Ch. 6", "url": "https://deeplearningbook.org/contents/mlp.html", "note": "batch norm gradient examples" }
+          ]
+        },
+        {
+          "date": "2026-03-25",
+          "dayLabel": "Wed March 25",
+          "type": "school",
+          "hours": "1.5 hrs",
+          "title": "Probability / concentration inequalities + PAC bounds",
+          "tasks": [
+            "Hoeffding's inequality: statement, proof sketch, application — cold-recallable",
+            "Chebyshev's inequality quick review",
+            "PAC learning: Derive P(R(f_n) >= eps) <= |H| * e^(-n*eps)",
+            "Derivation chain: Hoeffding -> Union Bound -> PAC Bound",
+            "Practice: given n=1000, |H|=100, what confidence on error <= 0.1?"
+          ],
+          "resources": [
+            { "name": "CMU Probability / Concentration Notes", "url": "https://www.cs.cmu.edu/~odonnell/papers/probability-concentration-notes.pdf", "note": "" },
+            { "name": "MIT 6.435 PAC Learning Notes (Jaakkola)", "url": "https://web.mit.edu/6.435/www/Jaakkola03.pdf", "note": "cleanest PAC derivation" },
+            { "name": "Bandit Algorithms Ch. 6 (Lattimore)", "url": "https://banditalgs.com/", "note": "Hoeffding -> ML generalization" }
+          ]
+        },
+        {
+          "date": "2026-03-26",
+          "dayLabel": "Thu March 26",
+          "type": "school",
+          "hours": "1.5 hrs",
+          "title": "Timed proof day + Mercer kernel closure [REP 1 — kernel/PAC proofs]",
+          "tasks": [
+            "20 min: kernel validity proofs from memory — PSD definition + all three closure cases",
+            "20 min: ELBO derivation sketch",
+            "20 min: attention gradient explanation (dL/dQ, dL/dK, dL/dV)",
+            "20 min: backprop gradient sketch",
+            "Honest assessment: which proofs are locked in, which need another pass"
+          ],
+          "resources": [
+            { "name": "CS229 SVM/Kernel Notes", "url": "https://cs229.stanford.edu/notes2021fall/cs229-notes3.pdf", "note": "" },
+            { "name": "MatrixCalculus.org", "url": "https://www.matrixcalculus.org/", "note": "" },
+            { "name": "KaTeX Reference", "url": "https://katex.org/docs/supported.html", "note": "" }
+          ]
+        },
+        {
+          "date": "2026-03-27",
+          "dayLabel": "Fri March 27",
+          "type": "school",
+          "hours": "1.5 hrs",
+          "title": "Convex optimization + review",
+          "tasks": [
+            "Convex sets and functions: definition, examples, verification",
+            "Gradient descent convergence: why convexity guarantees global minimum",
+            "KKT conditions worked examples - connect to SVM dual",
+            "Light review of Phase 1-3 weak spots from mistake log"
+          ],
+          "resources": [
+            { "name": "CS229 Full Lecture Notes", "url": "https://cs229.stanford.edu/lectures-spring2022/main_notes.pdf", "note": "" },
+            { "name": "CMU Probability / Concentration Notes", "url": "https://www.cs.cmu.edu/~odonnell/papers/probability-concentration-notes.pdf", "note": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Spring Break Intensive",
+      "dateRange": "March 28 - April 3",
+      "pillar": "D",
+      "days": [
+        {
+          "date": "2026-03-28",
+          "dayLabel": "Sat March 28",
+          "type": "break",
+          "hours": "3-4 hrs",
+          "title": "Past-problem diagnostic",
+          "tasks": [
+            "Take one past Round 2 style task (forum.beaver-edge.ai, IOAI 2024 Scientific Round)",
+            "Simulate time pressure exactly",
+            "Diagnose failure modes - map each to mistake taxonomy",
+            "This sets the agenda for the rest of spring break"
+          ],
+          "resources": [
+            { "name": "USAAIO Official Site", "url": "https://usaaio.org/", "note": "Round 2 guidance" },
+            { "name": "IOAI 2024 Past Problems", "url": "https://ioai-official.org/past-problems", "note": "Scientific Round" },
+            { "name": "Papers With Code SOTA", "url": "https://paperswithcode.com/sota", "note": "calibrate architecture knowledge" }
+          ]
+        },
+        {
+          "date": "2026-03-29",
+          "dayLabel": "Sun March 29",
+          "type": "break",
+          "hours": "3-4 hrs",
+          "title": "Full-task drill #1 - Tabular classification pipeline",
+          "tasks": [
+            "Morning: Full tabular pipeline in 90 min, no docs",
+            "pd.read_csv -> explore -> handle missing -> encode -> normalize -> train/val -> PyTorch -> GPU -> evaluate -> save -> predict",
+            "Afternoon: Redo on different dataset, targeting 75 min",
+            "Reasoning section (10 min): Why this loss function, why this optimizer, what breaks if you change CE to MSE"
+          ],
+          "resources": [
+            { "name": "Kaggle Datasets", "url": "https://www.kaggle.com/datasets", "note": "" },
+            { "name": "Kaggle PyTorch MNIST Pipeline", "url": "https://www.kaggle.com/code/robikscube/pytorch-mnist-beginner-tutorial", "note": "ready-to-adapt" },
+            { "name": "PyTorch CUDA Notes", "url": "https://docs.pytorch.org/docs/stable/notes/cuda.html", "note": "" },
+            { "name": "TorchMetrics Library", "url": "https://lightning.ai/docs/torchmetrics/stable", "note": "AUC-ROC/F1" }
+          ]
+        },
+        {
+          "date": "2026-03-30",
+          "dayLabel": "Mon March 30",
+          "type": "break",
+          "hours": "3-4 hrs",
+          "title": "Math repair day + attention repetition [REP 2 — attention + kernel/PAC from memory]",
+          "tasks": [
+            "Use mistake log only for repairs. No new topics.",
+            "Morning: PAC bound from memory, Chebyshev applications, Mercer closure proofs from memory (second repetition)",
+            "Afternoon: Attention from memory, target 35 min, no docs. Then matrix calculus redo."
+          ],
+          "resources": [
+            { "name": "MatrixCalculus.org", "url": "https://www.matrixcalculus.org/", "note": "" },
+            { "name": "MIT PAC Learning Notes", "url": "https://web.mit.edu/6.435/www/Jaakkola03.pdf", "note": "" },
+            { "name": "The Matrix Cookbook", "url": "https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf", "note": "" }
+          ]
+        },
+        {
+          "date": "2026-03-31",
+          "dayLabel": "Tue March 31",
+          "type": "break",
+          "hours": "3-4 hrs",
+          "title": "Full-task drill #2 - Image classification pipeline",
+          "tasks": [
+            "Morning: CIFAR-10 full pipeline in 90 min, no docs",
+            "Afternoon: Review all proofs from memory in LaTeX — attention grads, ELBO, Mercer+closure, SVM dual+KKT, Hoeffding->PAC",
+            "Reasoning section (10 min): Xavier vs Kaiming init, pre-norm vs post-norm LayerNorm"
+          ],
+          "resources": [
+            { "name": "Google Colab GPU Guide", "url": "https://colab.research.google.com/notebooks/gpu.ipynb", "note": "" },
+            { "name": "PyTorch Tensor View Semantics", "url": "https://pytorch.org/docs/stable/tensor_view.html", "note": "" },
+            { "name": "KaTeX Reference", "url": "https://katex.org/docs/supported.html", "note": "" }
+          ]
+        },
+        {
+          "date": "2026-04-01",
+          "dayLabel": "Wed April 1",
+          "type": "break",
+          "hours": "3-4 hrs",
+          "title": "Mixed simulation + kernel/PAC repetition [REP 2 — kernel/PAC + REP 3 — attention]",
+          "tasks": [
+            "45 min: Coding - transformer encoder OR VAE from memory (weaker one)",
+            "30 min: Theory writeup - derivation + explanation",
+            "30 min: Kernel closure + PAC bound from scratch, timed — second repetition block",
+            "Reasoning section (10 min): Adam vs SGD for transformers, temperature scaling in attention",
+            "15 min: Light NLP review (BERT, GPT objectives, fine-tuning — conceptual only)"
+          ],
+          "resources": [
+            { "name": "nanoGPT (Karpathy)", "url": "https://github.com/karpathy/nanoGPT", "note": "benchmark after" },
+            { "name": "PyTorch VAE Example", "url": "https://github.com/pytorch/examples/tree/main/vae", "note": "" },
+            { "name": "HF: BERT Masked LM", "url": "https://huggingface.co/docs/transformers/en/tasks/masked_language_modeling", "note": "conceptual only" }
+          ]
+        },
+        {
+          "date": "2026-04-02",
+          "dayLabel": "Thu April 2",
+          "type": "break",
+          "hours": "3-4 hrs",
+          "title": "Weak spot blitz + attention repetition [REP 3 — attention from memory, tight time]",
+          "tasks": [
+            "Morning: Timed implementations (transformer encoder 40min — third repetition no notes, VAE 25min, GAN 25min)",
+            "Afternoon: Practice reasoning explanations in Colab Markdown (2-3 practice explanations)",
+            "Only redo the two weakest areas from mistake log"
+          ],
+          "resources": [
+            { "name": "torch.autograd.gradcheck", "url": "https://pytorch.org/docs/stable/autograd.html#torch.autograd.gradcheck", "note": "verify gradients in <3 lines" },
+            { "name": "Markdown Tables Generator", "url": "https://www.tablesgenerator.com/markdown_tables", "note": "" }
+          ]
+        },
+        {
+          "date": "2026-04-03",
+          "dayLabel": "Fri April 3",
+          "type": "break",
+          "hours": "3-4 hrs",
+          "title": "Full competition simulation - dress rehearsal",
+          "tasks": [
+            "3-hour timed session simulating Round 2 exactly",
+            "Problem 1: Theory derivation in LaTeX (45 min)",
+            "Problem 2: From-scratch model implementation (60 min)",
+            "Problem 3: Full-task pipeline on GPU (75 min)",
+            "After: Honest debrief. Rest the brain. Pack for MIT. Sleep by 10pm. The work is done."
+          ],
+          "resources": [
+            { "name": "USAAIO Official Site", "url": "https://usaaio.org/", "note": "" },
+            { "name": "Google Colab GPU Guide", "url": "https://colab.research.google.com/notebooks/gpu.ipynb", "note": "" }
+          ]
+        }
+      ]
+    }
+  ],
+  "competitionDay": {
+    "nightBefore": [
+      "No new content. Review mistake log once.",
+      "Prepare: laptop, charger, Colab GPU confirmed.",
+      "Have a .py backup of encoder block, VAE skeleton, and training loop stub ready to paste if session drops.",
+      "Sleep by 10pm."
+    ],
+    "morningWarmup": "15-min attention derivation on paper. Do not review anything new. Arrive early and confirm GPU environment before the clock starts.",
+    "tacticalTimeSplit": [
+      { "phase": "First", "instruction": "Read the entire problem set before writing a single line. Identify where the points are concentrated." },
+      { "phase": "Order", "instruction": "Start with what you know best — not Problem #1. Bank partial credit early." },
+      { "phase": "Theory", "instruction": "Write assumptions, define variables, show all derivation steps even if incomplete. Partial credit is real." },
+      { "phase": "Code", "instruction": "Write a shape table before every tensor operation. If code fails after 10 min of debugging, switch to explanation + pseudocode immediately — explanation credit exists." },
+      { "phase": "Stuck", "instruction": "Write your assumptions and what you would do next. Graders award method points. A blank page earns nothing." },
+      { "phase": "Writeup", "instruction": "Reserve 10-15 min per problem for clean Markdown reasoning. This is where differentiation points live." },
+      { "phase": "Colab", "instruction": "Know how to reconnect and reload in under 60 seconds if session drops. Test this during the Apr 3 simulation." }
+    ],
+    "motto": "Score is the sum of mechanics repeated until automatic. There is nothing to discover on competition day. Execute what is already built."
+  },
+  "checklist": {
+    "mustHave": [
+      { "id": "ch1", "label": "Derive scaled dot-product attention from scratch", "completed": false },
+      { "id": "ch2", "label": "Explain multi-head attention, positional encoding, residuals, layer norm", "completed": false },
+      { "id": "ch3", "label": "Implement transformer encoder block from memory (target: 45 min)", "completed": false },
+      { "id": "ch4", "label": "Implement VAE from memory (target: 30 min)", "completed": false },
+      { "id": "ch5", "label": "Explain GAN objective + training instability + mode collapse", "completed": false },
+      { "id": "ch6", "label": "Explain diffusion forward/reverse process and noise prediction loss", "completed": false },
+      { "id": "ch7", "label": "Derive or explain ELBO cleanly", "completed": false },
+      { "id": "ch8", "label": "Derive softmax + cross-entropy gradient", "completed": false },
+      { "id": "ch9", "label": "Prove basic kernel validity: PSD definition + sum/product/exp closure proofs", "completed": false },
+      { "id": "ch10", "label": "Explain SVM dual at a clean high level + why alpha_i > 0 only for support vectors", "completed": false },
+      { "id": "ch11", "label": "Derive PAC bound from Hoeffding + union bound", "completed": false },
+      { "id": "ch12", "label": "Debug tensor shape errors quickly", "completed": false },
+      { "id": "ch13", "label": "Complete a full-task pipeline in 75 min on GPU", "completed": false },
+      { "id": "ch14", "label": "Write readable markdown/LaTeX under time pressure", "completed": false },
+      { "id": "ch15", "label": "Write reasoning sections: explain why behind loss, init, optimizer choices", "completed": false },
+      { "id": "ch16", "label": "Comfortable with GPU workflow: .to(device), batch sizing, OOM", "completed": false }
+    ],
+    "niceToHave": [
+      { "id": "nh1", "label": "Decoder implementation details (causal mask, cross-attention)", "completed": false },
+      { "id": "nh2", "label": "ViT overview (patches -> transformer encoder -> classification)", "completed": false },
+      { "id": "nh3", "label": "BERT/GPT objective familiarity", "completed": false },
+      { "id": "nh4", "label": "CLIP: InfoNCE loss, dual-encoder architecture, temperature tau", "completed": false },
+      { "id": "nh5", "label": "Stable Diffusion: VAE decoder role + text conditioning via cross-attention in UNet", "completed": false },
+      { "id": "nh6", "label": "Flash Attention conceptual understanding (IO-aware recomputation)", "completed": false },
+      { "id": "nh7", "label": "LoRA: rank decomposition delta_W = BA, know when and why", "completed": false },
+      { "id": "nh8", "label": "UNet skip connections implemented", "completed": false },
+      { "id": "nh9", "label": "Implement simple GAN from memory (target: 30 min)", "completed": false }
+    ]
+  },
+  "mistakeTaxonomy": [
+    { "category": "Conceptual", "meaning": "Did not know the idea", "fix": "Primary paper/note -> rebuild from memory", "exampleFix": "Read ELBO derivation, then redo from scratch 2x tonight" },
+    { "category": "Derivation", "meaning": "Knew idea but could not derive cleanly", "fix": "Write it out 3x from memory, timed", "exampleFix": "Redo attention gradients cold in 8 min, three times" },
+    { "category": "Algebra", "meaning": "Sign / norm / projection / arithmetic mistake", "fix": "Slow down; check with MatrixCalculus.org after", "exampleFix": "Write shape table before every matmul, no exceptions" },
+    { "category": "Shape", "meaning": "Tensor dimensions wrong", "fix": "Write full shape table before every matmul", "exampleFix": "Add shape assert after every layer for next 3 drills" },
+    { "category": "Coding", "meaning": "Syntax / PyTorch mechanics", "fix": "nanoGPT / PyTorch docs; never guess syntax", "exampleFix": "Read PyTorch View Semantics once, then rebuild" },
+    { "category": "Explanation", "meaning": "Idea understood but explanation was vague", "fix": "Write a one-paragraph clean explanation; repeat", "exampleFix": "Write kernel closure explanation in Markdown, time to 5 min" },
+    { "category": "Time", "meaning": "Knew it, but too slow", "fix": "Timed drill with 10% less time than last attempt", "exampleFix": "Next encoder drill: 40 min cap instead of 45" }
+  ],
+  "lowROIExtras": [
+    { "resource": "FlashAttention paper", "status": "Low probability bonus", "guidance": "Read the abstract only. Know: attention is memory-bandwidth bound, not compute-bound. Close it." },
+    { "resource": "TransformerLens", "status": "Near-zero point probability", "guidance": "Interesting, not testable at this level. Skip." },
+    { "resource": "Score-Based SDEs (Song et al.)", "status": "Only if diffusion goes beyond DDPM", "guidance": "Not during prep window." },
+    { "resource": "LoRA paper", "status": "Bonus knowledge", "guidance": "One sentence: ΔW = BA where r << d. That's it." },
+    { "resource": "ViT paper", "status": "Nice-to-have only", "guidance": "Read Fig 1 and first paragraph. Stop." },
+    { "resource": "Papers With Code SOTA", "status": "Do not touch", "guidance": "Ecosystem browsing. Zero scoring payoff." },
+    { "resource": "OpenAI Improved Diffusion repo", "status": "Only if UNet skeleton is solid", "guidance": "Full repo study is a time sink." },
+    { "resource": "HF BERT tutorial", "status": "10-min max", "guidance": "Conceptual only during Apr 1 NLP review." }
+  ],
+  "priorityOrder": [
+    "Transformer derivation + encoder implementation (Pillar A)",
+    "VAE / GAN / diffusion conceptual mastery + UNet (Pillar B)",
+    "Backprop + matrix calculus + linear algebra cleanup (Pillar C)",
+    "SVM dual + kernel proofs + Mercer closure (Pillar C)",
+    "PAC bound derivation (Pillar C)",
+    "Full-task pipeline speed on GPU (Pillar D)",
+    "Timed simulations + reasoning sections (Pillar D)",
+    "CLIP + SD conditioning (nice-to-have that could become must-have)",
+    "Everything else"
+  ]
+}

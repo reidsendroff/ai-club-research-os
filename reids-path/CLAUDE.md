@@ -1,0 +1,483 @@
+# CLAUDE.md — Reid's Path
+
+## What This File Is
+
+This is the strategic operating system for Reid Sendroff's trajectory toward a frontier AI lab offer by 2028. It is a living document. Every recommendation, plan, and decision made in this project should be tested against the north star goal and the decision filters in this file.
+
+Claude should act as a blend of elite strategist, technical mentor, research advisor, and honest long-term planner. Be direct. Avoid flattery. Make tradeoffs explicit. Optimize for what meaningfully compounds — not for what looks good on a college application.
+
+---
+
+## SESSION START CHECKLIST
+
+Before doing any AI Club work, ask Reid for the following if it has not been provided:
+
+**AI Club Leadership Google Drive link** — This is a shared public Drive folder containing live documents, templates, assets, and context that are not stored in this directory. It is the source of truth for current club operations. Ask for it every session before generating any club content, plans, or communications. Do not assume the files in this directory are complete without it.
+
+> "Before I start, can you share the AI Club Leadership Google Drive link? It has context I need."
+
+---
+
+---
+
+## The North Star Goal
+
+**By June 2028: Receive a genuine offer from a Tier-1 frontier AI lab — Anthropic, OpenAI, DeepMind/Google, xAI, or equivalent — without requiring a college degree.**
+
+Reid will apply to MIT and elite universities as a parallel path. But the primary optimization target is the lab offer, not admission. These two paths require nearly identical preparation, so there is no meaningful tradeoff between them — except in one area: course selection and time allocation should favor competition performance and research depth over college admissions optics whenever they conflict.
+
+**Why 2028 and not 2032:**
+The window for humans to enter frontier labs and build irreplaceable context during the AI transition is narrow. Current trajectory suggests:
+- **2028**: Human researchers still in genuine demand; Reid's profile rare enough to command attention; the room hasn't filled
+- **2032** (MIT graduation): Entry and mid-level technical roles structurally smaller; autonomous agents handling significant portions of engineering and research iteration; people who thrive will be those who got inside during 2025–2029
+
+This is pattern recognition from real data, not pessimism. Entry-level tech roles already declined 13–73% in AI-exposed fields between 2022–2026. Four more years of the same trajectory is the base case, not the worst case.
+
+**Current estimated probability of lab offer given full execution: 60–75%.**
+
+---
+
+## Who Reid Is
+
+**Reid Sendroff**
+- Northern Highlands Regional High School, Allendale, NJ — Class of 2028, Current Sophomore
+- Age 16 (as of early 2026)
+- Contact: reid@sendroff.com | linkedin.com/in/reidsendroff
+- Father: David Sendroff (founder, Bergen Optometry and Accelerado.ai) — actively involved in strategic development
+
+Reid is not a blank slate and should not be treated as one. He is already operating several levels above a typical high school student in ML, competitive programming, and applied AI. The goal is strategic compounding of existing momentum — not building from scratch.
+
+He is not trying to become generically impressive. He is trying to become rare.
+
+---
+
+## Verified Accomplishments — Current Snapshot (March 2026)
+
+### Academic
+- **Weighted GPA**: 4.0+
+- **PSAT Math**: 760/760 (perfect score)
+- **AP Physics**: Score 5 (2025) — selected as 1 of 14 students for Honors Math Analysis & AP Physics
+- **Current coursework**: AP Statistics, AP Precalculus
+- **Harvard Extension School — CSCI E-82**: Advanced Machine Learning, Data Mining & AI (2025) — Grade: A-, Distinguished Performance Recognition. Graduate-level coursework completed in high school.
+- **Johns Hopkins CTY**: Data Structures & Algorithms (Summer 2024)
+
+### Competitions & Rankings
+- **USAAIO 2026** — Honor Roll (Score: 107, national cutoff: 98); Qualified for Round 2 at MIT (April 4–5, 2026)
+- **Codeforces Expert** — Rating 1618, Top 6% globally; Div. 2 Round 1052: Rank 942/50,000 (Top 1.9%)
+- **LeetCode** — Max Rating 1917, Top 3.9% globally
+- **CALICO Informatics** (Fall 2025, UC Berkeley) — Silver Medal, Top 10.7%, Rank 117/1,092 teams
+- **UCF Division 1 High School Programming Contest** (Dec 2025) — 8th Place, Top 10%
+- **UCF Competitive Programming Summer Institute** (Summer 2025) — Silver Medal, 2nd Place
+- **Kaggle ML Competition** (Harvard Extension, 2025) — 3rd Place
+
+### Professional Experience
+
+**Software Engineering Intern — Accelerado.ai** | Remote, Summer 2025
+- Built NLP pipeline using Whisper (ASR) and GPT-4 API to classify call quality and predict conversion likelihood
+- Integrated voice analytics for real-time tracking of thousands of client calls daily
+- Collaborated with senior engineers on database architecture and microservice deployment
+
+**Founder & Lead Developer — MyClassPal.ai** | October 2025 – Present
+- Designed and built AI-driven study planning platform with adaptive daily/weekly plans
+- Integrated AI tutoring workflows for step-by-step problem solving and targeted practice
+- Submitted to Presidential AI Challenge (Track II) with full technical demo
+- Team: Reid Sendroff, Max Bergman, Giada Carcara
+
+### Projects & Research
+
+**WiFi Demand Forecasting Across Generations** — Harvard Extension (2025)
+- Co-developed time-series forecasting system with Cisco industry collaborator; ~10 years of WiFi sales data
+- Predicted demand for WiFi 6/6E/7 access points 6 months ahead
+- Hybrid SARIMA + Random Forest with Bayesian optimization (Optuna); ~92% accuracy, MAPE ~8%
+
+**ArgueMaster.com — AI Debate Coach** — AI Club Initiative (November 2025)
+- Built real-time AI debate coach using ChatGPT API and ElevenLabs voice synthesis
+- 10+ persona styles, adjustable difficulty, multi-agent LLM orchestration for counterargument generation and real-time scoring
+- Deployed working application; live demo presented
+
+**Kaggle ML Competition** — Harvard Extension (2025)
+- Ensemble model: XGBoost + CNN for structured data classification; 3rd place out of 25 teams
+- Competed against graduate students including Master's and PhD candidates — while in 10th grade
+- Top-3 AUC score via advanced feature engineering and hyperparameter tuning
+
+**Deep Embedded Clustering Research Extension** — Harvard Extension (October 2025)
+- Extended the DEC framework; compared baseline DEC with DCSS (Deep Clustering with Self-Supervision) and R-DEC (Robust DEC)
+- Evaluated using normalized mutual information and reconstruction loss metrics
+- Explored latent space optimization, feature disentanglement, and representation learning / clustering accuracy relationships
+
+**NBA Player Analytics** — Harvard Extension (September 2025)
+- Applied PCA, MDS, t-SNE, and UMAP to NBA player performance data to uncover role-based patterns
+- Compared interpretability and clustering quality across dimensionality reduction techniques
+- Demonstrated applications for player segmentation, talent scouting, and data-driven strategy
+
+**Density-Based Clustering for Geospatial Analysis** — Harvard Extension (October 2025)
+- K-Means, DBSCAN, HDBSCAN for urban crime hotspot detection; spatial cross-validation
+- PAI@5% of 16.23% — 16% of future crimes occurred within top 5% of predicted high-risk zones
+- Delivered 10-minute research presentation; video recorded (October 21, 2025)
+
+**Neural Network from Scratch** — Harvard Extension (October 2025)
+- Full forward/backpropagation in NumPy only — no deep learning libraries; 94% test accuracy
+
+**AI Stock Trading System** — Independent (March–May 2025)
+- Ensemble models (Random Forest + XGBoost) with real-time sentiment analysis from financial news via GPT-4
+- Optimized trading thresholds using gradient descent; visualized backtest results with equity curves
+
+**Game Development** — Independent (January 2021–January 2024)
+- Developed 5 interactive games in Unity using C#
+- Explored OOP, physics engines, real-time interactivity, gameplay mechanics, performance optimization
+
+### Active Research (In Progress)
+
+**Professor Peter V. Henstock, PhD, MBA** — Collaboration initiated March 2026
+
+Full profile: Machine Learning Group Leader at Incyte (current); Harvard Lecturer in graduate Advanced ML & Software Engineering (14+ years); former Pfizer ML/AI Lead (7 years); MIT Lincoln Laboratory technical staff (5 years). PhD in AI, 9 degrees total. Recognized as one of the top 5 AI leaders in pharma in the US and top 12 globally (DKV). Pfizer's top individual innovation award (2022). Harvard ABLConnect Teaching Innovator Prize (2016). Book author (Packt: *Supercharged Coding with GenAI*).
+
+**Why this relationship is exceptional:** Henstock is not assigning Reid a theoretical research question. He has personally built the exact systems Reid will work on — knowledge graphs on clinicaltrials.gov using Neo4j and GNNs at Pfizer, spatio-temporal analysis, LLM-based extraction from FAERS and drug labels, GNN-based drug safety prediction. Reid is being brought into real, active industrial research by the practitioner who pioneered it in pharma. The output will be grounded in a domain Henstock has 25 years of context in.
+
+**Henstock also taught the Harvard Extension CSCI E-82 course Reid took and earned an A- with Distinguished Performance Recognition.** He knows Reid's capability firsthand — this collaboration is not cold outreach, it's a continuation of a relationship where Reid already demonstrated his ceiling.
+
+- **Project 1**: Spatio-temporal clustering with visualization (arriving within weeks)
+- **Project 2**: Knowledge graph + Graph Neural Networks on existing clinical trials graph database — this is the same class of work Henstock did at Pfizer; potentially publishable
+- A preprint or publication with Henstock's name carries industry credibility that a purely academic collaborator's name would not. His network spans pharma AI, Harvard, Incyte, and the broader applied ML community.
+
+### Leadership
+- **President, CS Club** — NHRHS (2025–Present): weekly competitive programming sessions for 20+ active members; organizes Cornell, Columbia, MIT contest participation
+- **Co-Founder & President, AI Club** — NHRHS (2025–Present): 25+ active members; dual learning tracks (beginner and advanced); AI workshops, hackathons, full ML project mentorship. MyClassPal.ai was originally conceived and demo'd here before becoming a standalone platform. Ben serves as Operations Co-President, Mr. Novak as faculty advisor.
+
+### LinkedIn Headline / Bio (as of March 2026)
+*"High school student building production-grade AI systems combining strong algorithmic foundations with modern LLM-based tooling. Codeforces Expert (top 6% globally), USAAIO Round 2 qualifier, completed Harvard University's graduate-level ML curriculum. Focus: turning theory into deployable, real-world systems."*
+
+### Mentorship Network
+- **Professor Peter V. Henstock** — Active research collaborator; taught Reid's Harvard E-82 course; Incyte ML Group Leader; Harvard Lecturer (14+ years); former Pfizer ML/AI Lead; PhD in AI; top 5 pharma AI leader in US; direct experience building knowledge graphs on clinicaltrials.gov with GNNs
+- **Philip Greenspun** — MIT alum; connection facilitated by Scott Brazina
+- **Scott Brazina** — MIT alum, strong recommendation track record, key connector
+- **Top 10 U.S. Codeforces competitor** — Coaching Reid's competitive programming
+- **MIT Olympiad medalists** — Active mentorship
+
+### Technical Skills
+- **Languages**: Python (advanced), Java, C++, C#
+- **ML/AI**: PyTorch, TensorFlow/Keras, scikit-learn, XGBoost, transformers, CNNs, RNNs, OpenAI APIs, Whisper
+- **Data Science**: Pandas, NumPy, Matplotlib, Seaborn, PCA, t-SNE, feature engineering, cross-validation, ensemble methods, time-series modeling
+- **Unsupervised/Representation Learning**: K-Means, DBSCAN, HDBSCAN, Deep Embedded Clustering (DEC, DCSS, R-DEC)
+- **Algorithms**: Dynamic programming, graph algorithms (Dijkstra's, Floyd-Warshall, BFS/DFS), segment trees, Fenwick trees, union-find, greedy algorithms
+
+---
+
+## The Four Pillars — What the Lab Offer Requires
+
+A frontier lab offer at 18 without a degree requires four things. Everything Reid does should compound toward at least one of these.
+
+### Pillar 1: USAAIO Camp / Gold Medal
+The single highest-leverage competition credential. Gold or Camp selection is the signal frontier labs recognize immediately.
+- **Target**: Camp selection by 2027; gold medal by 2028
+- **Next milestone**: Round 2 at MIT, April 4–5, 2026
+- **Key technical gaps for gold**: Transformers at derivation level, generative AI depth (diffusion models, VAEs, GANs from first principles), backpropagation by hand across all architectures
+
+### Pillar 2: Codeforces International Master
+Top 1–2% of all competitive programmers globally. Combined with USAAIO Camp, this profile is essentially unprecedented at 18 and is immediately legible to anyone inside a frontier lab.
+- **Current**: Expert (Rating 1618, Top 6%)
+- **Milestones**: Candidate Master (~1900) → Master (~2100) → International Master (~2300)
+- **Strategy**: Consistent contests; targeted algorithm depth; leverage Top 10 U.S. coach
+
+### Pillar 3: Published Research with Henstock
+The artifact that makes Reid discoverable before any hiring conversation starts. A preprint or paper is the highest-leverage move between now and 2028.
+- Execute Henstock Project 1 with full attention when it arrives
+- Pursue Henstock Project 2 for publication depth
+- **Goal**: Preprint on arXiv or conference submission before June 2028
+
+### Pillar 4: Public Visibility
+Labs find candidates. Candidates don't find labs. Reid needs to be findable.
+- GitHub: Real, documented, non-trivial repositories
+- Personal site: Trajectory-focused, research-forward
+- Research artifacts go public immediately
+- USAAIO Camp (if selected): Use proximity to lab-connected people intentionally
+
+---
+
+## Course Strategy
+
+Reid is optimizing for competition performance and research capability — not admissions optics. When these conflict, competition and research win.
+
+### Drop / Deprioritize
+- **Spanish beyond Year 2** — Does not compound toward any pillar. No frontier lab has ever asked. Three years vs. four is irrelevant to every evaluator who matters.
+- **Survey-level AI/ML courses** — Already has Harvard Extension E-82. Another survey adds nothing.
+- **Generic "well-roundedness" courses**
+
+### Replace With (ranked by ROI for USAAIO + research)
+1. **Deep Learning from first principles** (PyTorch-based, math-heavy) — biggest gap for Round 2/Camp
+2. **Transformers architecture** — derivation-level, dedicated, not survey
+3. **Generative AI / Diffusion Models** — newest/hardest USAAIO syllabus material; least covered by competitors
+4. **Applied Linear Algebra + Multivariable Calculus** — scoped to syllabus needs
+5. **Graph Theory / GNNs** — direct application to Henstock Project 2
+
+### What USAAIO Tests at Gold Level
+Neither a pure math olympiad nor a pure coding olympiad. Both theory and implementation required simultaneously.
+
+Key domains by gold-level differentiation:
+- **Transformers**: Attention, full architecture, NLP + vision + GNN applications — explicitly flagged as requiring deep understanding
+- **Deep learning**: MLP, backprop, batch norm, dropout — derivation by hand AND PyTorch
+- **Generative AI**: CNNs, UNet, autoencoders, VAEs, GANs, denoising diffusion, stable diffusion
+- **Classical ML**: Regression, SVMs, decision trees, kNN, ensembles, PCA, k-means — derivation level
+- **Math**: Linear algebra, probability/statistics, multivariable calculus, convex optimization
+- **NLP**: Tokenization, embeddings, pre-training, fine-tuning
+
+---
+
+## Macro Context — Why the Window Is Real
+
+Frontier labs already hire on demonstrated output over credentials. High-profile competition results and olympiad performance are well-known inside these organizations. The cultural shift toward capability over credential is already visible in 2026 and will be further entrenched by 2028.
+
+The students who get frontier lab offers without degrees share one characteristic: someone inside the lab already knows their work before any hiring conversation starts. The path to a 2028 offer is less about being impressive enough and more about being visible to the right people early enough.
+
+USAAIO Camp in April 2026 puts Reid in a room with people who have those connections. That's where the probability starts becoming real rather than theoretical.
+
+---
+
+## Key Relationships — Maintenance Priorities
+
+| Person | Role | Priority Action |
+|--------|------|----------------|
+| Professor Peter V. Henstock | Active research collaborator; taught Reid's Harvard E-82 course; former Pfizer ML/AI Lead; Incyte ML Group Leader; Harvard Lecturer | Deliver on both projects with full attention; #1 professional relationship right now; he already knows Reid's capability and chose to engage |
+| Philip Greenspun | MIT alum, potential mentor | Maintain contact; share research progress at natural milestones |
+| Scott Brazina | MIT connector, strong recommendation track record | Keep warm; update on major milestones |
+| USAAIO Camp peers (April 2026+) | Future lab pipeline | Build relationships at Round 2 and Camp |
+| Top 10 Codeforces coach | Competitive programming | Leverage fully toward International Master |
+
+---
+
+## Immediate Priorities — Now Through Summer 2026
+
+1. **Round 2 at MIT (April 4–5)** — Perform; connect; if Camp is offered, treat it as the most important week of the year so far
+2. **Henstock Project 1** — When it arrives, give it full attention, not leftover attention
+3. **Close generative AI / transformer derivation gaps** — The technical delta between Honor Roll and gold
+4. **GitHub + public profile** — Audit; ensure all existing work is documented, public, and findable
+5. **Course swap** — Replace Spanish with high-ROI AI course for junior year before schedule locks
+
+---
+
+## Decision Filters
+
+Before pursuing any activity, apply these:
+
+- Does this build rare, measurable skill?
+- Does this create a public or selective signal of excellence?
+- Does this compound toward one of the four pillars?
+- Does this increase Reid's visibility to people inside frontier labs?
+- Is it better than the next-best use of the same time?
+- Would a strong technical evaluator — not a college admissions reader — find this impressive?
+
+If mostly no: deprioritize or cut. Say so directly.
+
+---
+
+## Strategic Philosophy
+
+**Optimize for leverage** — Prefer activities that build rare skill, measurable output, visible achievement, and long-term compounding advantage.
+
+**Avoid generic resume filler** — Shallow extracurriculars, decorative leadership, and low-rigor certificates don't move the needle. Don't recommend them.
+
+**Plan backward from elite outcomes** — Always reason from the 2028 lab offer backward to today's decisions.
+
+**Protect deep work** — Reid's schedule should not be overloaded with weak commitments. Identify and cut low-ROI activities aggressively.
+
+**Distinguish strong signal from weak signal** — Prefer objective contest performance, real systems built, research with technical depth, elite mentors, selective programs. Over generic participation, school-level recognition, and vague passion narratives.
+
+---
+
+## Narrative Arc — The Truthful Version
+
+Reid is an unusually ambitious technical student who started early, pursued real depth in algorithms, AI, and mathematically grounded problem solving, sought advanced coursework and strong mentorship, performed well in serious competitions, built and shipped real AI systems, and consistently chose hard, high-leverage opportunities over generic prestige.
+
+That narrative is real and defensible as of March 2026. The job between now and 2028 is to make it undeniable.
+
+---
+
+## Club Communications
+
+This section covers all output for the AI Club, CS Club, and MyClassPal. Read this before
+writing any announcement, email, post, or document for either club.
+
+### Universal Tone Rules
+
+These apply to every piece of content for every project. No exceptions.
+
+- No em dashes. Replace with a comma, a period, or restructure the sentence.
+- No "Thank you for your time." Not in emails. Not anywhere.
+- No corporate language. If it reads like a press release, rewrite it.
+- No motivational closers. "Let's build." "Stay curious." All banned.
+- No emojis unless the platform (Instagram/Discord) strongly calls for it. Maximum one. Never
+  as bullet labels.
+- No section headers or dividers in announcements or short-form content.
+- Specificity over hype. Name the demo. Name the person. Describe what was built.
+- Human voice. Every piece of content should read like a smart person wrote it to a friend.
+- Sign off with real names. Never "The AI Club Leadership Team" or "The CS Club Officers."
+- Let the facts do the work. Strong credentials and specific demos don't need editorial
+  decoration.
+
+### Email Protocol (Admin / Mr. Novak)
+
+- State the ask or purpose in the first sentence.
+- Under 150 words unless the request genuinely requires more detail.
+- Bullet points for multiple asks.
+- No em dashes.
+- No "Thank you for your time."
+- Professional but human. Not stiff.
+- Sign-off for AI Club: Reid and Ben
+- Sign-off for CS Club: Reid, Max, Matthew, and Alex
+
+Full protocol with worked example: `Email_Protocol.md`
+
+### AI Club — Self-Sustaining Club Plan (2026-2027)
+
+The goal is to make the AI Club a machine that runs without Reid being the machine.
+Right now Reid is the club: he stays up until midnight to run it. That cannot continue.
+The full plan is in `MEGA_CONTEXT.md` Section 30. The summary every session needs:
+
+**The core shift:** From "Reid runs the club" to "systems run the club."
+
+**Parent donation drive (September):** Ask parents to fund project teams directly at year
+start. Pitch: every dollar goes to a team's API budget. Target $150/team, 5 teams = $750.
+Treasurer owns distribution at start of Q2.
+
+**5 project teams of 4 members each.** Four people per team meets the Congressional App
+Challenge limit and distributes accountability so no single person carries a project.
+
+**Bi-weekly scrums (every 2 weeks):** Each team presents:
+1. What was built since last time
+2. The tech used
+3. The problem hit
+4. How it was solved (or why not yet)
+5. What the team will do before the next meeting
+
+**Room 133 open 3 days/week (Mon/Wed/Fri):** Students use school PCs to work on projects
+between meetings. One officer present. Secretary tracks sign-ins.
+
+**Member-run meetings:** Members present their own work. The guest demo slot is available
+to any member with something worth showing, not reserved for Reid.
+
+**75% participation minimum — strictly enforced next year.** Secretary tracks every meeting.
+Below 75%: ineligible for competitions, presentations, and leadership consideration.
+
+**Leadership team (8 officers, 2 per role):**
+- VP/COO (2): meeting ops, scrum facilitation, team liaison
+- CMO / Social Media (2): all announcements, Instagram, TikTok
+- Treasurer (2): API fund, parent donations, budget
+- Secretary (2): attendance, strike tracking, competition calendar
+
+**Three asks to Mr. Novak:**
+1. Room 133 open 3 days/week after school
+2. Tier 1 tool unblock on school PCs (GitHub, VS Code, terminal)
+3. Permission to contact parents for September donation drive
+
+**Competition targets:** Congressional App Challenge (November), MIT Blueprint (February),
+FBLA (Jan-Feb), plus local hackathons rolling through the year.
+
+**The real success metric:** Reid can miss 30% of meetings and the club gets better, not worse.
+
+Full detail, leadership job descriptions, scrum format, competition calendar, and the draft
+email to Mr. Novak: `MEGA_CONTEXT.md` Section 30.
+
+---
+
+### Club Reference Files
+
+| File | What It Covers |
+|---|---|
+| `MEGA_CONTEXT.md` | **The most complete file in this directory.** 31 sections covering all projects, all rules, all technical patterns, the full self-sustaining club plan for 2026-2027, and the proposal to Mr. Novak. Read this for deep context. |
+| `MASTER_PROMPT.md` | **Single copy-paste context loader.** Paste this at the start of any Claude session to load full context for all three projects. Fill in the Task field at the bottom. |
+| `AI_Club.md` | AI Club identity, leadership (Reid + Ben), announcement system, MyClassPal context, competitions |
+| `CS_Club.md` | CS Club identity, officer roster, competitive programming rules, announcement system, competitions |
+| `Email_Protocol.md` | Email rules, sign-off variants, worked example |
+
+The full 12-file AI Club operating system lives one level above this repo:
+`C:\Projects\reids-path\AI_Club_OS\`
+
+The announcement templates and prompt guides live in:
+`C:\Projects\reids-path\AI_Club_Docs\`
+
+---
+
+## Session Summary — May 31, 2026
+
+Everything built or updated in the May 31 session. Read this to get up to speed without re-reading the full conversation.
+
+### Files Created
+
+| File | Location | What It Is |
+|---|---|---|
+| `AI_Club.md` | reids-path\ | Full AI Club context: identity, leadership, announcement system, MyClassPal, competitions |
+| `CS_Club.md` | reids-path\ | Full CS Club context: officers, competitive programming rules, announcement system, competitions |
+| `Email_Protocol.md` | reids-path\ | Admin email rules, both sign-off variants, worked example |
+| `MASTER_PROMPT.md` | reids-path\ | Single copy-paste context loader for any Claude session. Fill in Task at bottom. |
+| `MEGA_CONTEXT.md` | reids-path\ | The most complete file. 31 sections: all projects, all rules, technical patterns, self-sustaining club plan, June 1 meeting plan |
+| `June1_Meeting_SuperPrompt.md` | reids-path\ | Mega super prompt for June 1 meeting content generation |
+| `AI_Club_June1_Meeting_Plan.docx` | C:\Projects\reids-path\ (outer root) | Full meeting roadmap for June 1, 2026. Print to PDF before the meeting. |
+| `June1_Meeting_Plan.js` | C:\Projects\reids-path\ (outer root) | Node.js script that generated the DOCX |
+
+### CLAUDE.md Changes Made This Session
+
+1. **SESSION START CHECKLIST** added at top — ask Reid for the AI Club Leadership Google Drive link before any club work.
+2. **Club Communications section** added — Universal Tone Rules, Email Protocol summary, Club Reference Files index.
+3. **AI Club Self-Sustaining Club Plan** section added — full summary of the 2026-2027 restructure plan.
+
+### Key Decisions Made This Session
+
+**Self-Sustaining Club Plan (full detail in MEGA_CONTEXT.md Section 30):**
+- 5 project teams of 4 members each. Teams funded by parent donation drive in September.
+- Bi-weekly scrums with 5-point format. Room 133 open Mon/Wed/Fri.
+- 8 officer positions (VP/COO x2, CMO x2, Treasurer x2, Secretary x2).
+- 75% participation minimum, strictly enforced. Below = ineligible for competitions.
+- Three asks to Mr. Novak: Room 133 access, Tier 1 tool unblock, parent contact list.
+
+**June 1 Meeting Plan (full document: AI_Club_June1_Meeting_Plan.docx):**
+- Part 1 (20 min): Leadership announcement. Applications open June 1, deadline June 8.
+  Applicants must build and present a vibe-coded AI project. Live June 15 or recorded demo June 10.
+  Current leadership must reapply on same terms. Mid-year replacement policy announced.
+- Part 2 (25 min): AI tools. Opus 4.8 (1M context, 96.7% USAMO), Claude Code dynamic workflows,
+  /plan + /goal + /workflows commands, Codex CLI comparison, Hermes 4.3, OpenClaw.
+- Part 3 (15 min): Competitions. USAAIO (Feb 2027), Congressional App Challenge (Oct 26 deadline),
+  IAI2O, Presidential AI Challenge, Canada AI Olympiad. Urgent: USAII Global AI Hackathon
+  building week is June 14-21 (next week, $6,000 prize). USAII NextGen Atlanta June 20-21.
+
+**Leadership Selection Timeline:**
+- June 1: Applications open
+- June 8: Declaration deadline
+- June 10: Recorded demo deadline
+- June 15: Final meeting, live presentations
+- June 16: Decisions announced
+- June 17: School ends, new leadership Discord server launched
+
+### Important: Google Drive
+The AI Club Leadership Google Drive has not been shared yet. Ask Reid for the link at the start
+of every future session before doing any club work. It contains live documents and context not
+stored in this directory.
+
+---
+
+## Update Rule
+
+Update this file when:
+- Codeforces rating changes (especially level milestones: Candidate Master, Master, International Master)
+- USAAIO Round 2 and Camp results are known
+- Henstock projects produce artifacts or publications
+- New mentors or high-leverage opportunities materialize
+- Course decisions are finalized for junior year
+- Any major competition result changes the profile
+
+Preserve consistency across all sections when updating.
+
+---
+
+## Bottom Line
+
+Every recommendation in this project should be tested against one question:
+
+**Does this meaningfully increase the probability that Reid walks into a frontier AI lab in 2028 on his own terms?**
+
+If not, it probably doesn't deserve much attention.
+
+---
+
+*Last updated: March 2026*
+*Maintained by: David Sendroff*
+*Reid: reid@sendroff.com | linkedin.com/in/reidsendroff*
