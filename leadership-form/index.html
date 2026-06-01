@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Club — Leadership Application</title>
+  <style>
+    html, body { margin: 0; background: #08080f; }
+  </style>
+</head>
+<body>
+  <!-- The form renders into this container -->
+  <div id="ai-club-form"></div>
+
+  <!-- Configure the backend + admin link before going live -->
+  <script>
+    window.AICLUB_CONFIG = {
+      // Paste the deployed Apps Script Web App URL here (see README.md, step 4):
+      endpoint: 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE',
+      // ADMIN button links straight to the responses Sheet:
+      adminUrl: 'https://docs.google.com/spreadsheets/d/1J4n_hF-st2dlv07qnyQaE3sRVIWnUgVYA7H6KX6qcsU/edit'
+    };
+  </script>
+  <script src="leadership-form.js"></script>
+</body>
+</html>
