@@ -10,6 +10,11 @@ from docx.shared import Inches, Pt, RGBColor
 OUT = r"C:\Projects\AI_Club_Brain\AI_Club_Leadership_Accountability_Audit_and_Rewrite.docx"
 
 
+# COLORS1= {
+#     "bob", RGBColor(255, 255, 255),
+#     "bat", RGBColor(0,0,0),
+# }
+
 COLORS = {
     "ink": RGBColor(24, 24, 27),
     "muted": RGBColor(82, 82, 91),
