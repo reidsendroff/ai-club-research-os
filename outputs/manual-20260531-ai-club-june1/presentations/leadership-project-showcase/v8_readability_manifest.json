@@ -1,0 +1,495 @@
+[
+  {
+    "bbox": [
+      38,
+      26,
+      3754,
+      1270
+    ],
+    "crop": [
+      119,
+      0,
+      3674,
+      1999
+    ],
+    "scale": 1.08,
+    "slide": 1,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_01.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      3434,
+      1854
+    ],
+    "crop": [
+      0,
+      0,
+      3555,
+      1999
+    ],
+    "scale": 1.08,
+    "slide": 2,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_02.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      3346,
+      1582
+    ],
+    "crop": [
+      0,
+      0,
+      3555,
+      1999
+    ],
+    "scale": 1.08,
+    "slide": 3,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_03.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      3642,
+      1846
+    ],
+    "crop": [
+      63,
+      0,
+      3618,
+      1999
+    ],
+    "scale": 1.08,
+    "slide": 4,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_04.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      3338,
+      1894
+    ],
+    "crop": [
+      0,
+      0,
+      3555,
+      1999
+    ],
+    "scale": 1.08,
+    "slide": 5,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_05.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      3570,
+      1398
+    ],
+    "crop": [
+      27,
+      0,
+      3582,
+      1999
+    ],
+    "scale": 1.08,
+    "slide": 6,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_06.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      3562,
+      2054
+    ],
+    "crop": [
+      23,
+      41,
+      3578,
+      2040
+    ],
+    "scale": 1.08,
+    "slide": 7,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_07.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      3306,
+      2038
+    ],
+    "crop": [
+      0,
+      33,
+      3555,
+      2032
+    ],
+    "scale": 1.08,
+    "slide": 8,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_08.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      2450,
+      1918
+    ],
+    "crop": [
+      0,
+      0,
+      3555,
+      1999
+    ],
+    "scale": 1.08,
+    "slide": 9,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_09.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      2538,
+      1734
+    ],
+    "crop": [
+      0,
+      0,
+      3373,
+      1897
+    ],
+    "scale": 1.138,
+    "slide": 10,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_10.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      3578,
+      1894
+    ],
+    "crop": [
+      31,
+      0,
+      3586,
+      1999
+    ],
+    "scale": 1.08,
+    "slide": 11,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_11.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      3522,
+      1894
+    ],
+    "crop": [
+      3,
+      0,
+      3558,
+      1999
+    ],
+    "scale": 1.08,
+    "slide": 12,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_12.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      2658,
+      2038
+    ],
+    "crop": [
+      0,
+      33,
+      3555,
+      2032
+    ],
+    "scale": 1.08,
+    "slide": 13,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_13.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      3290,
+      2054
+    ],
+    "crop": [
+      0,
+      41,
+      3555,
+      2040
+    ],
+    "scale": 1.08,
+    "slide": 14,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_14.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      3578,
+      2038
+    ],
+    "crop": [
+      31,
+      33,
+      3586,
+      2032
+    ],
+    "scale": 1.08,
+    "slide": 15,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_15.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      3522,
+      1998
+    ],
+    "crop": [
+      3,
+      13,
+      3558,
+      2012
+    ],
+    "scale": 1.08,
+    "slide": 16,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_16.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      3178,
+      2022
+    ],
+    "crop": [
+      0,
+      25,
+      3555,
+      2024
+    ],
+    "scale": 1.08,
+    "slide": 17,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_17.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      3162,
+      2022
+    ],
+    "crop": [
+      0,
+      25,
+      3555,
+      2024
+    ],
+    "scale": 1.08,
+    "slide": 18,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_18.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      3122,
+      2022
+    ],
+    "crop": [
+      0,
+      25,
+      3555,
+      2024
+    ],
+    "scale": 1.08,
+    "slide": 19,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_19.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      3122,
+      2022
+    ],
+    "crop": [
+      0,
+      25,
+      3555,
+      2024
+    ],
+    "scale": 1.08,
+    "slide": 20,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_20.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      3130,
+      2022
+    ],
+    "crop": [
+      0,
+      25,
+      3555,
+      2024
+    ],
+    "scale": 1.08,
+    "slide": 21,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_21.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      3218,
+      2022
+    ],
+    "crop": [
+      0,
+      25,
+      3555,
+      2024
+    ],
+    "scale": 1.08,
+    "slide": 22,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_22.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      2946,
+      1870
+    ],
+    "crop": [
+      0,
+      0,
+      3555,
+      1999
+    ],
+    "scale": 1.08,
+    "slide": 23,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_23.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      1618,
+      2094
+    ],
+    "crop": [
+      0,
+      61,
+      3555,
+      2060
+    ],
+    "scale": 1.08,
+    "slide": 24,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_24.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      2354,
+      1926
+    ],
+    "crop": [
+      0,
+      0,
+      3555,
+      1999
+    ],
+    "scale": 1.08,
+    "slide": 25,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_25.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      1858,
+      1862
+    ],
+    "crop": [
+      0,
+      0,
+      3555,
+      1999
+    ],
+    "scale": 1.08,
+    "slide": 26,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_26.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      2266,
+      2038
+    ],
+    "crop": [
+      0,
+      33,
+      3555,
+      2032
+    ],
+    "scale": 1.08,
+    "slide": 27,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_27.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      3530,
+      1950
+    ],
+    "crop": [
+      7,
+      0,
+      3562,
+      1999
+    ],
+    "scale": 1.08,
+    "slide": 28,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_28.png"
+  },
+  {
+    "bbox": [
+      38,
+      26,
+      3554,
+      1886
+    ],
+    "crop": [
+      19,
+      0,
+      3574,
+      1999
+    ],
+    "scale": 1.08,
+    "slide": 29,
+    "file": "/Users/davidsendroff/Projects/AI_Club_Brain/outputs/manual-20260531-ai-club-june1/presentations/leadership-project-showcase/v8_readability_slides/slide_29.png"
+  }
+]
